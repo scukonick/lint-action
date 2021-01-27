@@ -24,4 +24,3 @@ echo "running binary"
 
 golangci-lint run --verbose --out-format github-actions \
   --new-from-rev "${GITHUB_BASE_REF}" --modules-download-mode vendor --fast $UNIQ_DIRS
-echo "lint exited with $?"
