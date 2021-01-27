@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-ls $GITHUB_WORKSPACE
-pwd
-cd "$GITHUB_WORKSPACE" || exit 1
-
 echo "Running linter"
 CHANGE_LIST=$(git diff "${GITHUB_BASE_REF}".."${GITHUB_HEAD_REF}" --name-only | grep '.go$')
 
@@ -22,4 +18,6 @@ for f in $CHANGE_LIST; do
 done
 
 UNIQ_DIRS=$(echo -e $DIRS | sort -u)
+which golangci-lint
+echo "running binary"
 golangci-lint run --new-from-rev HEAD --modules-download-mode vendor --fast $UNIQ_DIRS
