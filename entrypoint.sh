@@ -3,3 +3,5 @@
 env | grep GITHUB
 
 env
+
+ls $GITHUB_WORKSPACE
