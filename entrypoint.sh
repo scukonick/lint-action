@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-env | grep GITHUB
-
 ls $GITHUB_WORKSPACE
-
+pwd
 cd "$GITHUB_WORKSPACE" || exit 1
 
 echo "Running linter"
