@@ -19,5 +19,7 @@ done
 
 UNIQ_DIRS=$(echo -e $DIRS | sort -u)
 which golangci-lint
+echo "uniq dirs: ${UNIQ_DIRS}"
 echo "running binary"
+
 golangci-lint run --new-from-rev HEAD --modules-download-mode vendor --fast $UNIQ_DIRS
